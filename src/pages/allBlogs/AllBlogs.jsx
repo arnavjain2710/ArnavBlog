@@ -14,6 +14,10 @@ function AllBlogs() {
     useEffect(() => {
         window.scrollTo(0, 0)
  }, [])
+     // Create markup function 
+     function createMarkup(c) {
+        return { __html: c };
+    }
 
     return (
         <Layout>
@@ -85,7 +89,8 @@ function AllBlogs() {
                                                             ? 'rgb(226, 232, 240)'
                                                             : ' rgb(30, 41, 59)'
                                                     }}>
-                                                        Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.
+                                                        {/* {item.blogs.content} */}
+                                                        <div dangerouslySetInnerHTML={createMarkup(item.blogs.content)}></div>
                                                     </p>
                                                 </div>
                                             </div>
